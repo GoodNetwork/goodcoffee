@@ -21,7 +21,7 @@ return array(
         '__root__'  => array(
             'route'     => '/',
             'template'  =>'index',
-            'layout'    => 'layout_home'
+            'layout'    => false
         )
     ),
 );
