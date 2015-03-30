@@ -7,9 +7,7 @@ return array(
     'author.name'       => '', // Global author name
     'date.format'       => 'd M, Y',   // Date format to be used in article page (not for routes)
     'layout.file'       => 'layout',    // Site layout file
-    'assets.prefix'     => '', // prefix to be added with assets files
     'prefix'            => '',   // prefix to be added with all URLs (not to assets). eg : '/blog'
-    'google.analytics'  => false, // Google analytics code. set false to disable
     'cache' => array(
         'enabled'   => false, // Enable/Disable cache
         'expiry'    => 24, // Cache expiry, in hours. -1 for no expiry
@@ -20,8 +18,13 @@ return array(
         // Site root
         '__root__'  => array(
             'route'     => '/',
-            'template'  =>'index',
+            'template'  =>'landing_page',
             'layout'    => false
+        ),
+        'home' => array(
+        	'route'     => '/home/',
+        	'template'  => 'home',
+        	'layout'    => 'layout'
         )
     ),
 );

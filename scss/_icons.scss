@@ -1,0 +1,53 @@
+/**
+ * Icons
+ *
+ * Instead of editing the Ionicons CSS we add our own so
+ * we can easily update the distribute CSS.
+ */
+
+.ionicon,
+.nav-menu .menu-item-has-children:after,
+.job_listing-location:before,
+.job_listing-phone:before,
+.job-manager-form h2:before,
+.facetwp-facet .facetwp-checkbox.checked:after,
+.widget_layered_nav li.chosen a:after,
+.select:after,
+.js-toggle-area-trigger:after,
+.showing_jobs .rss_link:before,
+.listify_widget_panel_listing_tags a:before,
+.job-package-includes li:before,
+.mfp-close:before,
+.star-icon.full:before,
+.star-icon.half:before,
+.showing_jobs .reset:before,
+.entry-date:before,
+.entry-comments:before,
+.entry-share:before,
+.search-form .search-submit:before,
+.star-rating:before,
+.stars span a:before,
+.listing-contact-overview-inner[itemprop=address]:before,
+.content-shop-wrapper .button.add_to_cart_button:before,
+.content-shop-wrapper .added_to_cart:before,
+.widget_layered_nav_filters a:before,
+.job-dashboard-action-edit:before,
+.job-dashboard-action-mark_filled:before,
+.job-dashboard-action-mark_not_filled:before,
+.job-dashboard-action-delete:before,
+.tabbed-listings-tabs li:last-child a:after,
+.content-single-job_listing-gallery-wrapper .type-attachment .comment-count a:before {
+	display: inline-block;
+	font-family: "Ionicons";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-rendering: auto;
+	line-height: 1;
+	vertical-align: middle;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

@@ -30,6 +30,11 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+use Parse\ParseClient;
+use Parse\ParseObject;
+use Parse\ParseQuery;
+use Parse\Internal\SetOperation;
+
 namespace Textpress;
 /**
 * Textpress
@@ -146,6 +151,7 @@ class Textpress
     */
     public function init()
     {
+    	\Parse\ParseClient::initialize( 'avOitl6OoNQJr7WwKgO4XfHEWIu2smvZpFXnzBFK', 'uu7bWmJBcjFHWsVxq0840bgZNyabI5tKk8sylY4w', '8v73tJ0MWk0ktq2UavL5Cd669storiqppHfJhZib' );
         $this->themeBase = './templates';
         $this->slim->view()->setTemplatesDirectory($this->themeBase);
         $this->setViewConfig();
@@ -334,27 +340,12 @@ class Textpress
 
                 //set view data for article  and archives routes
                 switch ($key) {
-                    case '__root__' :
-                    case 'rss'      :
-                    case 'atom'     :
-                        $self->allArticles = array_slice($self->allArticles, 0, 10);
-                        break;
-                    case 'sitemap'  :
-                        $self->slim->response->headers->set('Content-Type', 'text/xml');
-                        $self->setSitemapData();
-                        break;
-                    case 'article'  :
-                        $article = $self->setArticle($self->getPath($args));
-                        $template = ($article->getMeta('template') && $article->getMeta('template') !="")
-                                        ? $article->getMeta('template')
-                                        : $template;
-                        break;
-                    case 'archives' :
-                        $self->loadArchives($args);
-                        break;
-                    case 'category' :
-                    case 'tag'      :
-                        $self->filterArticles($key,$args[0]);
+                    case 'home' :
+                    	$query = new \Parse\ParseQuery("Venue");
+                    	$query->descending("createdAt");
+                    	$query->limit(6);
+                    	$results = $query->find();
+                    	$this->viewData['venues'] = $results;
                         break;
 
                     // If key is not matched, check if a custom function is declared

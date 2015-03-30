@@ -11,8 +11,8 @@
             "homepage": "http://anggiarlandi.com"
         }],
     "require": {
+        "parse/php-sdk" : "1.1.*",
         "php": ">=5.3.3",
-        "michelf/php-markdown" : "1.4.*",
         "slim/slim": "2.*"
     },
     "require-dev": {
