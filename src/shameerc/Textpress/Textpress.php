@@ -340,13 +340,19 @@ class Textpress
 
                 //set view data for article  and archives routes
                 switch ($key) {
-                    case 'home' :
+                    case 'home':
                     	$query = new \Parse\ParseQuery("Venue");
                     	$query->descending("createdAt");
                     	$query->limit(6);
                     	$results = $query->find();
                     	$this->viewData['venues'] = $results;
                         break;
+
+                    case 'venue':
+                    	$query = new \Parse\ParseQuery("Venue");
+                    	$venue = $query->get($args[0]);
+                    	$this->viewData['venue'] = $venue;
+                    	break;
 
                     // If key is not matched, check if a custom function is declared
                     default:

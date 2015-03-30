@@ -23,8 +23,11 @@ return array(
         ),
         'home' => array(
         	'route'     => '/home/',
-        	'template'  => 'home',
-        	'layout'    => 'layout'
+        	'template'  => 'home'
+        ),
+        'venue' => array(
+        	'route'     => '/venue/:id/',
+        	'template'  => 'venue'
         )
     ),
 );
