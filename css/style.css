@@ -14511,6 +14511,21 @@ body .gform_wrapper ul.gfield_checkbox li input[type="checkbox"]:checked + label
   font-weight: 400;
 }
 
+/* line 348, ../scss/_forms.scss */
+.home-filter__input {
+  border: 0;
+  background: #fff;
+  box-shadow: none;
+  padding: 23px 16px;
+  margin-right: 5px;
+}
+
+/* line 356, ../scss/_forms.scss */
+.home-filter__form {
+  width: 50%;
+  margin: 0 auto;
+}
+
 /**
  * Images
  *

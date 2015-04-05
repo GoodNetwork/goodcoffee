@@ -344,3 +344,16 @@ body .gform_wrapper ul.gfield_radio li input[type="radio"]:checked+label,
 body .gform_wrapper ul.gfield_checkbox li input[type="checkbox"]:checked+label {
 	font-weight: 400;
 }
+
+.home-filter__input {
+  border: 0;
+  background: #fff;
+  box-shadow: none;
+  padding: 23px 16px;
+  margin-right: 5px;
+}
+
+.home-filter__form {
+  width: 50%;
+  margin: 0 auto;
+}
