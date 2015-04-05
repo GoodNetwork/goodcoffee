@@ -25,6 +25,12 @@ module.exports = function (grunt) {
                 relativeAssets: false
             },
             dist: {},
+        },
+        concat: {
+          dist: {
+            src: ['js/plugins/*.js'],
+            dest: 'js/plugins.js'
+          }
         }
     });
 
