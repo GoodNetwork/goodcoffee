@@ -1,5 +1,5 @@
 # Goodcoffee
----
+
 - Clone the repo: `git clone https://github.com/GoodNetwork/goodcoffee.git`
 - `cd goodcoffee`
 - Install npm modules: `npm install`
