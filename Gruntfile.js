@@ -38,4 +38,9 @@ module.exports = function (grunt) {
         'compass',
         'watch'
     ]);
+
+    grunt.registerTask('build', [
+      'compass',
+      'concat'
+    ])
 };

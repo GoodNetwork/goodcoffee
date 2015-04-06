@@ -26,7 +26,10 @@
 
     </div>
 
-    <script type="text/javascript" src="/js/app.js"></script>
+    <script src="https://fb.me/react-0.13.1.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/jsx" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/plugins.js"></script>
 
 </body>
