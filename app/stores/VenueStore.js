@@ -19,7 +19,7 @@ var VenueStore = Reflux.createStore({
     },
 
     setVenues: function(venues) {
-        this.venues = venues;
+        this.venues = venues.map(function(venue){return venue.toJSON()});
         this.trigger({
             venues: this.venues
         });
@@ -30,7 +30,7 @@ var Venue = Parse.Object.extend('Venue', {}, {
 
     getInitial: function(cb) {
         var query = new Parse.Query(Venue);
-        query.descending('createdAt').limit(100);
+        query.descending('createdAt').limit(300);
         query.find({
             success: function(result) {
                 cb(result);

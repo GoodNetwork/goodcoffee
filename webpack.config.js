@@ -9,7 +9,7 @@ module.exports = {
             { test: /\.coffee$/, loader: 'coffee-loader' },
             { test: /\.js$/, loader: 'jsx-loader?harmony' },
             { test: /\.css$/, loader: "style!css" },
-            { test: /\.scss$/, loader: "style!css!sass" }
+            { test: /\.scss$/, loader: "style!css!autoprefixer!sass" }
         ]
     },
     resolve: {

@@ -37,7 +37,7 @@ var HomepageMap = React.createClass({
       var _this = this;
       this.googleClearMarkers();
       props.venues.forEach(function(venue){
-        _this.googleAddMarker(venue.get('lat'), venue.get('lng'));
+        _this.googleAddMarker(venue.lat, venue.lng);
       });
     },
 
