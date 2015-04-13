@@ -1,14 +1,9 @@
 var React  = require('react');
-var Reflux  = require('reflux');
 
 var Actions     = require('../actions/actions');
 var VenueStore  = require('../stores/VenueStore');
 
 var HomepageMap = React.createClass({
-
-    mixins: [
-      Reflux.listenTo(VenueStore, 'onVenueStoreUpdate')
-    ],
 
     getInitialState: function() {
       return {
@@ -38,10 +33,10 @@ var HomepageMap = React.createClass({
       Actions.mapMounted();
     },
 
-    onVenueStoreUpdate: function(data) {
+    componentWillReceiveProps: function(props) {
       var _this = this;
       this.googleClearMarkers();
-      data.venues.forEach(function(venue){
+      props.venues.forEach(function(venue){
         _this.googleAddMarker(venue.get('lat'), venue.get('lng'));
       });
     },
@@ -54,7 +49,7 @@ var HomepageMap = React.createClass({
       var marker;
       var markers = this.state.markers;
 
-      if (! map) {
+      if (!map) {
         map = this.state.map;
       }
 

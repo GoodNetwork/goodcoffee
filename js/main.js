@@ -95,7 +95,7 @@
 	    return (
 	      React.createElement("div", {className: "homepage"}, 
 	        React.createElement(SearchTool, null), 
-	        React.createElement(HomepageMap, null), 
+	        React.createElement(HomepageMap, {venues: this.state.venues}), 
 	        React.createElement(ListingView, {venues: this.state.venues})
 	      )
 	    );
@@ -19083,16 +19083,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React  = __webpack_require__(4);
-	var Reflux  = __webpack_require__(13);
 
 	var Actions     = __webpack_require__(10);
 	var VenueStore  = __webpack_require__(7);
 
 	var HomepageMap = React.createClass({displayName: "HomepageMap",
-
-	    mixins: [
-	      Reflux.listenTo(VenueStore, 'onVenueStoreUpdate')
-	    ],
 
 	    getInitialState: function() {
 	      return {
@@ -19122,10 +19117,10 @@
 	      Actions.mapMounted();
 	    },
 
-	    onVenueStoreUpdate: function(data) {
+	    componentWillReceiveProps: function(props) {
 	      var _this = this;
 	      this.googleClearMarkers();
-	      data.venues.forEach(function(venue){
+	      props.venues.forEach(function(venue){
 	        _this.googleAddMarker(venue.get('lat'), venue.get('lng'));
 	      });
 	    },
@@ -19138,7 +19133,7 @@
 	      var marker;
 	      var markers = this.state.markers;
 
-	      if (! map) {
+	      if (!map) {
 	        map = this.state.map;
 	      }
 

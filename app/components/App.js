@@ -30,7 +30,7 @@ var App = React.createClass({
     return (
       <div className="homepage">
         <SearchTool />
-        <HomepageMap />
+        <HomepageMap venues={this.state.venues} />
         <ListingView venues={this.state.venues} />
       </div>
     );
