@@ -1,34 +1,6 @@
-/**
- * Listify
- *
- * @missing
- */
-
-@import 'mixins';
-@import 'bootstrap';
+@import 'vendor/lost';
 @import 'reset';
-@import 'icons';
-@import 'patterns';
-@import 'ionic_icons';
 
-@import 'forms';
-@import 'images';
-@import 'content';
-
-@import 'structure';
-@import 'header';
-@import 'navigation';
-@import 'job_listing_single';
-@import 'job_listing_gallery';
-@import 'job_listing_archive';
-
-@import 'page';
-@import 'page_author';
-@import 'page_blog';
-@import 'page_home';
-@import 'page_home_map';
-@import 'page_widgetized';
-
-@import 'sidebar';
-
-@import 'footer';
+@import 'homepage';
+@import 'search-tool';
+@import 'listing-view';

@@ -11,27 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="stylesheet" href="/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 
-<body class="home fixed-header" style="padding-top: 75px;">
-    <div id="page" class="hfeed site">
+<body>
 
-        <?php include 'partials/header.php'; ?>
+    <?php echo $content; ?>
 
-        <?php echo $content; ?>
-
-        <?php include 'partials/footer.php'; ?>
-
-    </div>
-
-    <script src="https://fb.me/react-0.13.1.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.13.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/jsx" src="/js/app.js"></script>
-    <script type="text/javascript" src="/js/plugins.js"></script>
-
+    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 
 </html>

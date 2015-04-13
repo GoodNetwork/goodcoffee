@@ -1,0 +1,8 @@
+.homepage {
+  @include clearfix;
+}
+
+.map {
+  @include column('1/1');
+  height: 500px;
+}

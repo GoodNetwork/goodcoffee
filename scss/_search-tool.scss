@@ -1,0 +1,13 @@
+.search-tool {
+  @include clearfix;
+  background: green;
+
+  & > * {
+    @include column('1/3', 3, 10px);
+    height: 70px;
+  }
+}
+
+.button {
+  background: grey;
+}

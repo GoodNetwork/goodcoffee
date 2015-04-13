@@ -4,4 +4,4 @@
 - `cd goodcoffee`
 - Install npm modules: `npm install`
 - Install php modules: `php composer.phar install`
-- Run grunt build: `grunt build`
+- `webpack --watch`
