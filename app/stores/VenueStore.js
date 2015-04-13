@@ -46,7 +46,7 @@ var Venue = Parse.Object.extend('Venue', {}, {
       query.descending('createdAt');
 
       if (options.keyword) {
-        query.matches('name', '.*'+options.keyword+'.*');
+        query.matches('name_lowercase', '.*'+options.keyword+'.*');
       }
 
       query.find({
