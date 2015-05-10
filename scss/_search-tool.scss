@@ -1,9 +1,9 @@
 .search-tool {
-  @include clearfix;
+  lost-utility: clearfix;
   background: green;
 
   & > * {
-    @include column('1/3', 3, 10px);
+    lost-column: 1/3;
     height: 70px;
   }
 }

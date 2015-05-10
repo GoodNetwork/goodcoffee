@@ -1,9 +1,9 @@
 .listing-view {
-  @include clearfix;
+  lost-utility: clearfix;
 }
 
 .listing-view__block {
-  @include column('1/3',3);
+  lost-column: 1/3;
   background: #eee;
   margin-bottom: 25px;
   height: 250px;
