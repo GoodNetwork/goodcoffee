@@ -1,15 +1,37 @@
 var React       = require('react');
+var Reflux      = require('reflux');
+var _           = require('lodash');
+var $           = require('jquery');
+
 var HomepageMap = require('./HomepageMap');
 var SearchTool  = require('./SearchTool');
 var ListingView = require('./ListingView');
 var Actions     = require('../actions/actions');
 var VenueStore  = require('../stores/VenueStore');
-var Reflux      = require('reflux');
-var _           = require('lodash');
-var $           = require('jquery');
 
 // Load Css
 require('../../scss/style.scss');
+
+var CheckboxWithLabel = React.createClass({
+  getInitialState: function() {
+    return { isChecked: false };
+  },
+  onChange: function() {
+    this.setState({isChecked: !this.state.isChecked});
+  },
+  render: function() {
+    return (
+      <label>
+        <input
+          type="checkbox"
+          checked={this.state.isChecked}
+          onChange={this.onChange}
+        />
+        {this.props.label}
+      </label>
+    );
+  }
+});
 
 var App = React.createClass({
   mixins: [
@@ -18,16 +40,14 @@ var App = React.createClass({
 
   getInitialState: function() {
     return {
-      venues:         [],
-      neighborhoods:  [],
-      filteredVenues: []
+      venues:         []
     };
   },
 
   onVenueStoreUpdate: function(data) {
     this.setState({
-      venues: data.venues,
-      neighborhoods: _.uniq(data.venues.map(function(venue){return venue.neighborhood;}))
+      venues: data.venues
+      // neighborhoods: _.uniq(data.venues.map(function(venue){return venue.neighborhood;}))
     });
   },
 
@@ -45,7 +65,10 @@ var App = React.createClass({
           <section>
             <h1>Neighborhoods</h1>
             <ul className="filter-tool__neighborhood">
-              <li><label><input type="checkbox" />Williamsburg</label></li>
+              <li><CheckboxWithLabel label="Williamsburg" /></li>
+              <li><CheckboxWithLabel label="East Village" /></li>
+              <li><CheckboxWithLabel label="Midtown" /></li>
+              <li><CheckboxWithLabel label="Upper Side" /></li>
             </ul>
           </section>
         </div>
