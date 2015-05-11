@@ -20,3 +20,6 @@ npm-debug.log
 .sass-cache
 /composer/
 /tmp/
+
+/js/
+/css/
