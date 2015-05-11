@@ -17,6 +17,7 @@ var CheckboxWithLabel = React.createClass({
     return { isChecked: false };
   },
   onChange: function() {
+    console.log(this.props.type);
     this.setState({isChecked: !this.state.isChecked});
   },
   render: function() {
@@ -40,7 +41,15 @@ var App = React.createClass({
 
   getInitialState: function() {
     return {
-      venues:         []
+      venues: [],
+      filterTool: {
+        neighborhoods: {
+          williamsburg: false,
+          east_village: false,
+          midtown:      false,
+          upper_side:   false
+        }
+      }
     };
   },
 
@@ -65,10 +74,10 @@ var App = React.createClass({
           <section>
             <h1>Neighborhoods</h1>
             <ul className="filter-tool__neighborhood">
-              <li><CheckboxWithLabel label="Williamsburg" /></li>
-              <li><CheckboxWithLabel label="East Village" /></li>
-              <li><CheckboxWithLabel label="Midtown" /></li>
-              <li><CheckboxWithLabel label="Upper Side" /></li>
+              <li><CheckboxWithLabel keyword="williamsburg" type="neighborhood" label="Williamsburg" /></li>
+              <li><CheckboxWithLabel keyword="east village" type="neighborhood" label="East Village" /></li>
+              <li><CheckboxWithLabel keyword="midtown" type="neighborhood" label="Midtown" /></li>
+              <li><CheckboxWithLabel keyword="upper" type="neighborhood" label="Upper Side" /></li>
             </ul>
           </section>
         </div>

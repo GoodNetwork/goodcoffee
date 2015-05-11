@@ -82,6 +82,7 @@
 	    return { isChecked: false };
 	  },
 	  onChange: function() {
+	    console.log(this.props.type);
 	    this.setState({isChecked: !this.state.isChecked});
 	  },
 	  render: function() {
@@ -105,7 +106,15 @@
 
 	  getInitialState: function() {
 	    return {
-	      venues:         []
+	      venues: [],
+	      filterTool: {
+	        neighborhoods: {
+	          williamsburg: false,
+	          east_village: false,
+	          midtown:      false,
+	          upper_side:   false
+	        }
+	      }
 	    };
 	  },
 
@@ -130,10 +139,10 @@
 	          React.createElement("section", null, 
 	            React.createElement("h1", null, "Neighborhoods"), 
 	            React.createElement("ul", {className: "filter-tool__neighborhood"}, 
-	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {label: "Williamsburg"})), 
-	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {label: "East Village"})), 
-	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {label: "Midtown"})), 
-	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {label: "Upper Side"}))
+	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {keyword: "williamsburg", type: "neighborhood", label: "Williamsburg"})), 
+	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {keyword: "east village", type: "neighborhood", label: "East Village"})), 
+	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {keyword: "midtown", type: "neighborhood", label: "Midtown"})), 
+	              React.createElement("li", null, React.createElement(CheckboxWithLabel, {keyword: "upper", type: "neighborhood", label: "Upper Side"}))
 	            )
 	          )
 	        ), 
