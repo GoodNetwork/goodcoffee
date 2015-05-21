@@ -12,3 +12,5 @@ var ListingView = React.createClass({
 });
 
 module.exports = ListingView;
+
+<div> test </div>
